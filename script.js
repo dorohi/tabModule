@@ -1,8 +1,8 @@
 window.addEventListener('DOMContentLoaded', function () {
 	'use strict';
-	let info = document.querySelector('.info-header'),					// Родитель навигации табами
-		tabs = document.querySelectorAll('.info-header-tab'),			// Навигация табами - ссылки на блоки
-		tabContent = document.querySelectorAll('.info-tabcontent');		// Сами табы, блоки с контентом
+	let header = document.querySelector('.header'),					// Родитель навигации табами
+		tabs = document.querySelectorAll('.header-tab'),			// Навигация табами - ссылки на блоки
+		tabContent = document.querySelectorAll('.tabcontent');		// Сами табы, блоки с контентом
 	hideTabContent(1);
 
 	//Скрытие всех табов, кроме нужного (key - от какого таба скрывать) 
@@ -21,9 +21,9 @@ window.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	info.addEventListener('click', (event) =>{
+	header.addEventListener('click', (event) =>{
 		let target = event.target;
-		if (target && target.classList.contains('info-header-tab')) {
+		if (target && target.classList.contains('header-tab')) {
 			for (let i = 0; i < tabs.length; i++) {
 				if (tabs[i] == target){
 					hideTabContent(0);
